@@ -22,7 +22,7 @@ def parseXML(xmlfile):
         metaItem = {}
         metaItem['SystemName'] = s.getAttribute('Name')
         if metaItem['SystemName'] == theKey:
-          metaItem['Unique'] = 1
+            metaItem['Unique'] = 1
         if s.hasAttribute('MaxLength'):
             metaItem['MaximumLength'] = s.getAttribute('MaxLength')
         annot = s.getElementsByTagName('Annotation')
@@ -42,7 +42,7 @@ def savetoCSV(metaItems, filename):
     # writing to csv file
     with open(filename, 'w') as csvfile:
 
-                # creating a csv dict writer object
+        # creating a csv dict writer object
         writer = csv.DictWriter(csvfile, fieldnames=fields)
 
         # writing headers (field names)
