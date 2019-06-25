@@ -25,6 +25,8 @@ def parseXML(xmlfile):
             metaItem['Unique'] = 1
         if s.hasAttribute('MaxLength'):
             metaItem['MaximumLength'] = s.getAttribute('MaxLength')
+        if s.hasAttribute('Precision'):
+            metaItem['Precision'] = s.getAttribute('Precision')
         annot = s.getElementsByTagName('Annotation')
         if annot != []:
             for t in annot:
