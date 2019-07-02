@@ -28,9 +28,12 @@ def parseXML(xmlfile):
         if s.hasAttribute('Precision'):
             metaItem['Precision'] = s.getAttribute('Precision')
         annot = s.getElementsByTagName('Annotation')
+        metaItem['LongName'] = ""
         if annot != []:
             for t in annot:
                 metaItem['LongName'] = t.getAttribute('String')
+        if metaItem['LongName'] == "":
+            metaItem['LongName'] = metaItem['SystemName']
         metaItems.append(metaItem)
     return metaItems
 
